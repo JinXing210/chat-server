@@ -14,22 +14,22 @@ var	https = require('https');
 // };
 //-------------------------------------------------------//
 // Setting environment
-// app.set('views', __dirname + '/client');
-// app.set('view engine', 'ejs');
-// app.engine('html', require('ejs').renderFile);
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded());
-// app.use(session({
-//     secret: '@#@$MYSIGN#@$#$',
-//     resave: false,
-//     saveUninitialized: true
-// }));
-// app.use(express.static(__dirname + '/client'));
+app.set('views', __dirname + '/client');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(session({
+    secret: '@#@$MYSIGN#@$#$',
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(express.static(__dirname + '/client'));
 //-------------------------------------------------------//
 // Start the app by listening on <port>
 // var port = process.env.PORT || 443;
-var port = process.env.PORT || 443;
-// var port = process.env.PORT || 80;
+// var port = process.env.PORT || 443;
+ var port = process.env.PORT || 3000;
 //-------------------------------------------------------//
 // var options =
 // {
@@ -41,9 +41,9 @@ var port = process.env.PORT || 443;
 //   cert: fs.readFileSync('keys/cert.pem')
 // //   ca: fs.readFileSync('keys/fullchain.pem')
 // };
-// var server = app.listen(port, function(){
-//     console.log("Live Video Chat Server has started on port " + port);
-// });
+var server = app.listen(port, function(){
+    console.log("Live Video Chat Server has started on port " + port);
+});
 // var server = https.createServer(options, app).listen(port, function(){
 //     console.log("Live Video Chat Server has started on port " + port);
 // });
