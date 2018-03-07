@@ -52,3 +52,7 @@ require('./chat-server/socket_server');
 //-------------------------------------------------------//
 // RESTful API for client
 //-------------------------------------------------------//
+app.get('/', function(req, res) {
+    console.log( "index.html/"+req.params );
+    res.render('index.html');
+});
