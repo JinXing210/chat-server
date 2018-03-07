@@ -23,9 +23,9 @@ module.exports = function(server) {
         return idChatCounter.toString();
     }
 
-    const wss = new WebSocket.Server({
+    var wss = new ws.Server({
         server : server,
-        path : '/chat'        
+        path : '/chat'
     });
 
     wss.on('connection', function(ws) {
