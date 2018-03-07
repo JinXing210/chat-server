@@ -48,7 +48,7 @@ var server = app.listen(port, function(){
 //     console.log("Live Video Chat Server has started on port " + port);
 // });
 
-require('./chat-server/socket_server');
+require('./chat-server/socket_server')(server);
 //-------------------------------------------------------//
 // RESTful API for client
 //-------------------------------------------------------//

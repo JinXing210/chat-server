@@ -10,7 +10,7 @@ var ws = require('ws');
 //-----------------------------------------------------------//
 //-----------------------------------------------------------//
 //-----------------------------------------------------------//
-module.exports = function() {
+module.exports = function(server) {
     var idCounter = 0;
     function nextUniqueId() {
         idCounter++;
@@ -23,7 +23,10 @@ module.exports = function() {
         return idChatCounter.toString();
     }
 
-    const wss = new WebSocket.Server({ port: 80 });
+    const wss = new WebSocket.Server({
+        server : server,
+        path : '/chat'        
+    });
 
     wss.on('connection', function(ws) {
         var sessionId = nextUniqueId();
