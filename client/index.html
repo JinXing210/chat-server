@@ -15,7 +15,7 @@
 
 </body>
 <script>
-	var ws = new WebSocket('wss://' + location.host + '/chat');
+	var ws = new WebSocket('wss://' + location.host);
     ws.onmessage = function(message) {
         var parsedMessage = JSON.parse(message.data);
         console.info('Received message: ' + message.data);
