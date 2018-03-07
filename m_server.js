@@ -29,7 +29,7 @@ app.use(express.static(__dirname + '/client'));
 // Start the app by listening on <port>
 // var port = process.env.PORT || 443;
 // var port = process.env.PORT || 443;
- var port = process.env.PORT || 3000;
+ var port = process.env.PORT || 80;
 //-------------------------------------------------------//
 // var options =
 // {
