@@ -11,6 +11,8 @@ var ws = require('ws');
 //-----------------------------------------------------------//
 //-----------------------------------------------------------//
 module.exports = function(server) {
+
+    
     var idCounter = 0;
     function nextUniqueId() {
         idCounter++;
@@ -27,6 +29,8 @@ module.exports = function(server) {
         server : server,
         path : '/chat'
     });
+    
+    console.log('Start video chat Websocket');
 
     wss.on('connection', function(ws) {
         var sessionId = nextUniqueId();
