@@ -23,7 +23,7 @@ module.exports = function() {
         return idChatCounter.toString();
     }
 
-    const wss = new WebSocket.Server({ port: 3000 });
+    const wss = new WebSocket.Server({ port: 80 });
 
     wss.on('connection', function(ws) {
         var sessionId = nextUniqueId();
